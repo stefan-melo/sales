@@ -7,8 +7,8 @@ app = dash.Dash(external_stylesheets=[dbc.themes.BOOTSTRAP])
 
 df = pd.DataFrame(
     {
-        'Czech Republic': [47384, 58409, 78142],
-        'Slovakia': [12374, 18409, 24673],
+        'France': [47384, 58409, 78142],
+        'Germany': [12374, 18409, 24673],
     }
 )
 
