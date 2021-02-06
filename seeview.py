@@ -8,9 +8,12 @@ import dash_html_components as html
 
 class ViewBase(object):
 
-    # Table
+    def __init__(self) -> None:
+        super().__init__()
 
-    def to_table(df: DataFrame):
+    # Table
+    
+    def toTable(self, df: DataFrame):
         """
         Transfer DataFrame to HTML tbale
         """
@@ -25,22 +28,12 @@ class ViewBase(object):
             [html.Tr([
                 html.Td(df.iloc[i][col])
                 for col in df.columns
-                for i in range(min(len(df)))
+                for i in range(0, len(df))
             ])]
         )
 
 
-# Dashbord and layout
 
-app = dash.Dash(__name__)
-
-
-
-
-
-
-if __name__ == '__main__':
-    app.run_server(debug=True)
 
 
 """ money = Format(symbol=Symbol.yes, symbol_suffix=' €', precision=2, scheme=Scheme.fixed, group_delimiter=' ', group=Group.yes, groups=[3])

@@ -1,18 +1,28 @@
-from dash.dash import Dash
-from dash_core_components.Dropdown import Dropdown
-from dash_html_components import H1
-from dash_html_components.Label import Label
-from numpy.lib.arraysetops import unique
 import pandas as pd
 import numpy as np
 import dash
 import dash_core_components as dcc
-from dash_table import DataTable, FormatTemplate, Format
-from dash_table.Format import Format, Group, Symbol, Scheme
-import dash_bootstrap_components as dbc
-import dash_html_components as html
+from pandas.core.frame import DataFrame
 from abc import ABC
-import seemodel
+import seemodel, seeview
+
+class ControlBase(object):
+
+    def __init__(self, model, view) -> None:
+        super().__init__()
+
+        self.model = model
+        self.view = view
+
+        self.app = dash.Dash(__name__)
+        self.app.layout = view.toTable(model.df_data)
+    
+    def showTable(df: DataFrame):
+        pass
 
 
+
+if __name__ == '__main__':
+    app = ControlBase(seemodel.ModelBase(), seeview.ViewBase())
+    app.app.run_server(debug=True)
     

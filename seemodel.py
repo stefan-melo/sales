@@ -26,7 +26,7 @@ class ModelBase(object):
         self.datafolder = config['SOURCE']['DataFolder']
         self.targetfile = config['SOURCE']['TargetFile']
         self.df_data = self.readData(self.datafolder, 'folder')
-        self.df_targets = self.readData(self.targetfolder, 'file')
+        self.df_targets = self.readData(self.targetfile, 'file')
 
 
     def readData(self, source, type):
