@@ -1,0 +1,20 @@
+tr th {
+  background: rgb(31, 119, 180) !important;
+  color: white;
+  padding: 0.3rem !important;
+  font-size: 0.6rem;
+}
+
+tr td {
+  padding: 0.3rem !important;
+  font-size: 0.6rem;
+}
+
+tr:nth-child(odd) td {
+  background: #eee !important;
+}
+
+tr:hover td {
+    background: rgb(79, 175, 243) !important;
+    color: white !important
+  }
